@@ -1,17 +1,23 @@
 import styles from "./styles";
-import { Navbar, Hero } from "./components";
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import Topbar from "./scenes/globals/Topbar"
+
 
 const App = () => {
+  const [theme, colorMode] = useMode();
   return (
-    <div className="w-full overflow-hidden">
-      <div className={`${styles.paddingX} $styles.flexCenter`}>
-        <div className={`${styles.boxwidth}`}><Navbar/></div>
-      </div>
-
-      <div className={`${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}><Hero/></div>
-      </div>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />  
+         {/* reset the css to default */}
+        <div className="app">
+          <main className="content">
+            <Topbar/>
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 };
 

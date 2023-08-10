@@ -1,16 +1,11 @@
-
-import { Navbar } from "./components";
-
-const App = () => {
+import HomeScreen from "./scenes/HomeScreen";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+function App() {
   return (
-    <div className="w-full  overflow-hidden">
-     <Navbar/>
-
-      {/* <div className={`${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}><Hero/></div>
-      </div> */}
+    <div>
+    <HomeScreen/>
     </div>
   );
-};
+}
 
 export default App;

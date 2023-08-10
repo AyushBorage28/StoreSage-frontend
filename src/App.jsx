@@ -16,12 +16,12 @@ const App = () => {
         {/* reset the css to default */}
         <div className="app">
           <main className="content">
-            <Topbar />
-            {/* <Routes>
+            {/* <Topbar /> */}
+            <Routes>
               <Route path="/" element={<HomeScreen />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-            </Routes> */}
+            </Routes>
           </main>
         </div>
       </ThemeProvider>

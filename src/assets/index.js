@@ -1,12 +1,13 @@
+
 import airbnb from "./airbnb.png";
 import bill from "./bill.png";
 import binance from "./binance.png";
 import card from "./card.png";
 import coinbase from "./coinbase.png";
 import dropbox from "./dropbox.png";
-import logo from "./logo.svg";
+import storesage from "./storesage.png";
 import quotes from "./quotes.svg";
-import robot from "./robot.png";
+import herosection from "./herosection.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
@@ -31,9 +32,9 @@ export {
   card,
   coinbase,
   dropbox,
-  logo,
+  storesage,
   quotes,
-  robot,
+  herosection,
   send,
   shield,
   star,
@@ -45,6 +46,7 @@ export {
   discount,
   facebook,
   instagram,
+
   linkedin,
   twitter,
   people01,

@@ -10,9 +10,9 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Topbar = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
+  const theme = useTheme(); // Bring mui theme
+  const colors = tokens(theme.palette.mode); //Bring dark/light tokens and add it to mui theme
+  const colorMode = useContext(ColorModeContext); //
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>

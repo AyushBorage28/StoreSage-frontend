@@ -6,6 +6,9 @@ import HomeScreen from "./scenes/HomeScreen";
 import { Route, Routes } from "react-router-dom";
 import Login from "./scenes/Login";
 import Signup from "./scenes/Signup";
+import Team from "./scenes/team";
+
+import Dashboard from "./scenes/dashboard";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -16,12 +19,14 @@ const App = () => {
         {/* reset the css to default */}
         <div className="app">
           <main className="content">
-            {/* <Topbar /> */}
-            <Routes>
+            <Topbar />
+            <Dashboard/>
+            <Team/>
+            {/* <Routes>
               <Route path="/" element={<HomeScreen />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-            </Routes>
+            </Routes> */}
           </main>
         </div>
       </ThemeProvider>

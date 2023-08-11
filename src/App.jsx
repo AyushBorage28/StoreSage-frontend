@@ -21,9 +21,6 @@ import Sidebar from "./scenes/globals/Sidebar";
 import HomeScreen from "./scenes/HomeScreen";
 import Login from "./scenes/Login";
 import Signup from "./scenes/Signup";
-import Team from "./scenes/team";
-
-import Dashboard from "./scenes/dashboard";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -44,7 +41,7 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} /> */}
 
-              {/* <Route path="/" element={<Dashboard />} /> */}
+              <Route path="/" element={<Dashboard />} />
               {/* <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />

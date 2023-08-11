@@ -34,6 +34,7 @@ const Form = () => {
         display="grid"
         gap="30px"
                 gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+                //split the grid into 4 sections each sections will hva a minimum of zero and maximum of 1 fraction 
                 sx={{
                   "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
                 }}
@@ -51,7 +52,7 @@ const Form = () => {
                   helperText={touched.firstName && errors.firstName}
                   sx={{ gridColumn: "span 2" }}
                 />
-                <TextField
+ <TextField
                   fullWidth
                   variant="filled"
                   type="text"
@@ -64,7 +65,7 @@ const Form = () => {
                   helperText={touched.lastName && errors.lastName}
                   sx={{ gridColumn: "span 2" }}
                 />
-                <TextField
+   <TextField
                   fullWidth
                   variant="filled"
                   type="text"

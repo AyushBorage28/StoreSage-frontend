@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "../styles";
-import { close, logo, menu } from "../assets";
+import { close, storesage, menu } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
     <div className={`${styles.boxWidth}`}>
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+      <img src={storesage} alt="storesage" className="w-[190px] h-[32px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -56,8 +56,8 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-    /</div>
-    /</div>
+    </div>
+    </div>
   );
 };
 

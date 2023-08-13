@@ -1,8 +1,8 @@
-// import { useState } from "react";
-// import { Routes, Route } from "react-router-dom";
-// import { CssBaseline, ThemeProvider } from "@mui/material";
-// import { ColorModeContext, useMode } from "./theme";
-// import Topbar from "./scenes/globals/Topbar";
+import { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode } from "./theme";
+import Topbar from "./scenes/globals/Topbar";
 
 // import Dashboard from "./scenes/dashboard";
 // import Team from "./scenes/team";
@@ -23,27 +23,26 @@ import Login from "./scenes/Login";
 import Signup from "./scenes/Signup";
 
 const App = () => {
-  // const [theme, colorMode] = useMode();
-  // const [isSidebar, setIsSidebar] = useState(true);
+  const [theme, colorMode] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
 
   return (
-    <HomeScreen/>
-    // <ColorModeContext.Provider value={colorMode}>
-    //   <ThemeProvider theme={theme}>
-    //     <CssBaseline />
-    //     {/* reset the css to default */}
-    //     <div className="app">
-    //       <Sidebar isSidebar={isSidebar} />
-    //       <main className="content">
-    //         <Topbar setIsSidebar={setIsSidebar} />
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {/* reset the css to default */}
+        <div className="app">
+          <Sidebar isSidebar={isSidebar} />
+          <main className="content">
+            <Topbar setIsSidebar={setIsSidebar} />
 
-    //         <Routes>
-    //           {/* <Route path="/" element={<HomeScreen />} />
-    //           <Route path="/login" element={<Login />} />
-    //           <Route path="/signup" element={<Signup />} /> */}
+            <Routes>
+              {/* <Route path="/" element={<HomeScreen />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} /> */}
 
-    //           <Route path="/" element={<Dashboard />} />
-    //           <Route path="/team" element={<Team />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/team" element={<Team />} />
 
     //           <Route path="/contacts" element={<Contacts />} />
 

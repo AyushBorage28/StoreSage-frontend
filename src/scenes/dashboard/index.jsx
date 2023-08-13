@@ -1,21 +1,68 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
+// import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+// import EmailIcon from "@mui/icons-material/Email";
+// import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
+// import PersonAddIcon from "@mui/icons-material/PersonAdd";
+// import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import { stats } from "../../constants";
+import { revenueGenerated } from "../../constants";
+import { campaign } from "../../constants";
+import {
+  DownloadOutlined as DownloadOutlinedIcon,
+  Email as EmailIcon,
+  PointOfSale as PointOfSaleIcon,
+  PersonAdd as PersonAddIcon,
+  Traffic as TrafficIcon,
+} from "@mui/icons-material";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const renderIcon = (iconName) => {
+    switch (iconName) {
+      case "EmailIcon":
+        return (
+          <EmailIcon
+            sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+          />
+        );
+      case "PointOfSaleIcon":
+        return (
+          <PointOfSaleIcon
+            sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+          />
+        );
+      case "PersonAddIcon":
+        return (
+          <PersonAddIcon
+            sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+          />
+        );
+      case "TrafficIcon":
+        return (
+          <TrafficIcon
+            sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+          />
+        );
+      case "DownloadOutlinedIcon":
+        return (
+          <DownloadOutlinedIcon
+            sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+          />
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <Box m="20px">
@@ -47,82 +94,24 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="32,441"
-            subtitle="New Clients"
-            progress="0.30"
-            increase="+5%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="1,325,134"
-            subtitle="Traffic Received"
-            progress="0.80"
-            increase="+43%"
-            icon={
-              <TrafficIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
+        {stats.map((stat, index) => (
+          <Box
+            key={index}
+            gridColumn="span 3"
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <StatBox
+              title={stat.title}
+              subtitle={stat.subtitle}
+              progress={stat.progress}
+              increase={stat.increase}
+              icon={renderIcon(stat.icon)}
+            />
+          </Box>
+        ))}
 
         {/* ROW 2 */}
         <Box
@@ -143,22 +132,18 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                {revenueGenerated.title}
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342.32
+                {revenueGenerated.amount}
               </Typography>
             </Box>
             <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
+              <IconButton>{renderIcon(revenueGenerated.icon)}</IconButton>
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
@@ -224,7 +209,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+           {campaign.title}
           </Typography>
           <Box
             display="flex"
@@ -238,9 +223,9 @@ const Dashboard = () => {
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              $48,352 revenue generated
+              {campaign.amount}
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography>{campaign.subtitle}</Typography>
           </Box>
         </Box>
         <Box

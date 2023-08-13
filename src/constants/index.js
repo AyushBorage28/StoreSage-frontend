@@ -1,4 +1,5 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star } from "../assets";
+
 
 export const navLinks = [
   {
@@ -70,23 +71,23 @@ export const feedback = [
   },
 ];
 
-export const stats = [
-  {
-    id: "stats-1",
-    title: "User Active",
-    value: "3800+",
-  },
-  {
-    id: "stats-2",
-    title: "Trusted by Company",
-    value: "230+",
-  },
-  {
-    id: "stats-3",
-    title: "Transaction",
-    value: "$230M+",
-  },
-];
+// export const stats = [
+//   {
+//     id: "stats-1",
+//     title: "User Active",
+//     value: "3800+",
+//   },
+//   {
+//     id: "stats-2",
+//     title: "Trusted by Company",
+//     value: "230+",
+//   },
+//   {
+//     id: "stats-3",
+//     title: "Transaction",
+//     value: "$230M+",
+//   },
+// ];
 
 export const footerLinks = [
   {
@@ -195,3 +196,47 @@ export const clients = [
     storesage: dropbox,
   },
 ];
+
+export const stats = [
+  {
+    "title": "12,361",
+    "subtitle": "Emails Sent",
+    "progress": "0.75",
+    "increase": "+14%",
+    "icon": "EmailIcon"
+  },
+  {
+    "title": "431,225",
+    "subtitle": "Sales Obtained",
+    "progress": "0.50",
+    "increase": "+21%",
+    "icon": "PointOfSaleIcon"
+  },
+  {
+    "title": "32,441",
+    "subtitle": "New Clients",
+    "progress": "0.30",
+    "increase": "+5%",
+    "icon": "PersonAddIcon"
+  },
+  {
+    "title": "1,325,134",
+    "subtitle": "Traffic Received",
+    "progress": "0.80",
+    "increase": "+43%",
+    "icon": "TrafficIcon"
+  }
+]
+
+export const revenueGenerated = {
+  title: "Revenue Generated",
+  amount: "$59,342.32",
+  icon: "DownloadOutlinedIcon",
+};
+
+export const campaign = {
+  title: "Campaign",
+  amount: "$48,352 revenue generated",
+  subtitle: "Includes extra misc expenditures and costs",
+};
+

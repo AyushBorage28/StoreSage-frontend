@@ -4,7 +4,7 @@ import GetStarted from "./GetStarted";
 
 const Hero = () => {
   return (
-    <div className={`bg-black ${styles.flexStart}`}>
+    <div className={`bg-black  ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <section
           id="home"
@@ -31,16 +31,20 @@ const Hero = () => {
                 The new <br className="sm:block hidden" />{" "}
                 <span className="text-[#dc4a32]">Generation</span>{" "}
               </h1>
-              <div className="ss:flex hidden md:mr-4 mr-0">
-                <GetStarted />
-              </div>
+              <a href="/dashboard">
+                <div className="ss:flex hidden md:mr-4 mr-0">
+                  <GetStarted />
+                </div>
+              </a>
             </div>
 
             <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
-            Retail Insights
+              Retail Insights
             </h1>
             <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-             Designed to revolutionize the way you understand and harness retail performance, our dashboard brings the power of real-time data right to your fingertips.
+              Designed to revolutionize the way you understand and harness
+              retail performance, our dashboard brings the power of real-time
+              data right to your fingertips.
             </p>
           </div>
 

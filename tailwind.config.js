@@ -5,9 +5,9 @@ export const theme = {
   extend: {
     colors: {
       primary: "#00040f",
-      secondary: "#00f6ff",
+      secondary: "#dc4a32",
       dimWhite: "rgba(255, 255, 255, 0.7)",
-      dimBlue: "rgba(9, 151, 124, 0.1)",
+      dimBlue: "#292b2b",
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],

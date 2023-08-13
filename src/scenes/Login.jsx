@@ -3,7 +3,7 @@ import styles from '../styles';
 
 const Login = () => {
   return (
-    <div className="bg-neutral-900 min-h-screen flex items-center font-poppins justify-center">
+    <div className="bg-black min-h-screen flex items-center font-poppins justify-center">
       <section className="bg-black-gradient md:w-[60%] lg:w-[40%] xl:w-[30%] rounded-lg shadow-lg p-8 text-white">
         <h1 className="text-xl font-bold leading-tight tracking-tight mb-4 md:text-2xl">
           Sign in to your account

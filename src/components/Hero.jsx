@@ -65,9 +65,11 @@ const Hero = () => {
             {/* gradient end */}
           </div>
 
+          <Link to="/dashboard">
           <div className={`ss:hidden ${styles.flexCenter}`}>
             <GetStarted />
           </div>
+          </Link>
         </section>
       </div>
     </div>

@@ -10,6 +10,7 @@ function HomeScreen() {
       <Navbar/>
       <Hero/>
       <Business/>
+      <Footer/>
       {/* <Sales/> */}
      {/* <USP/> */}
     

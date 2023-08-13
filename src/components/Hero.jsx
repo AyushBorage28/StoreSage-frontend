@@ -1,6 +1,7 @@
 import styles from "../styles";
 import { discount, herosection } from "../assets";
 import GetStarted from "./GetStarted";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -31,11 +32,11 @@ const Hero = () => {
                 The new <br className="sm:block hidden" />{" "}
                 <span className="text-[#dc4a32]">Generation</span>{" "}
               </h1>
-              <a href="/dashboard">
+              <Link to="/dashboard">
                 <div className="ss:flex hidden md:mr-4 mr-0">
                   <GetStarted />
                 </div>
-              </a>
+              </Link>
             </div>
 
             <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
